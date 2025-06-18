@@ -7,9 +7,8 @@ typedef long long ll;
 typedef unsigned long long ull;
 typedef pair<int,int> pii;
 typedef pair<ll, ll> pll;
-#define int ull
 const int mod = 1e9 + 7, inf = 0x3f3f3f3f, P = 131;
-//const int dx[8] = {-1,0,1,0,-1,-1,1,1}, dy[8] = {0,1,0,-1,-1,1,-1,1};
+const int dx[8] = {-1,0,1,0,-1,-1,1,1}, dy[8] = {0,1,0,-1,-1,1,-1,1};
 int read()
 {
     int x = 0, w = 1;
@@ -26,33 +25,25 @@ int read()
     }
     return x * w; 
 }
+
 void solve()
 {
-    int a,q,ans=0;
-    cin>>a>>q;
-    while (q--)
+    int n,ans=0;
+    cin>>n;
+    while (n--)
     {
-        int k;
-        cin>>k;
-        if((a>>k-1)&1)
-            ans+=0;
-        else
-        {
-            int sum=a%(1<<k-1ull);
-            int s=(1ull<<k-1);
-            ans+=s-sum;
-            a+=s-sum;
-        }
+        int a;cin>>a;ans^=a;
     }
     cout<<ans;
 }
-signed main()
+
+int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
     #ifndef ONLINE_JUDGE 
-        freopen("test.in", "r", stdin);
+        //freopen("test.in", "r", stdin);
         //freopen("test.out", "w", stdout);
     #endif
     int t = 1;
