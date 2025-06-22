@@ -28,7 +28,7 @@ int read()
 
 void solve()
 {
-    int n,ans=0;
+    int n, ans = 0;
     cin>>n;
     while (n--)
     {
