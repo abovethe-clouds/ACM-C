@@ -9,6 +9,7 @@ typedef pair<int,int> pii;
 typedef pair<ll, ll> pll;
 const int mod = 1e9 + 7, inf = 0x3f3f3f3f, P = 131;
 const int dx[8] = {-1,0,1,0,-1,-1,1,1}, dy[8] = {0,1,0,-1,-1,1,-1,1};
+#define int ll
 int read()
 {
     int x = 0, w = 1;
@@ -25,25 +26,59 @@ int read()
     }
     return x * w; 
 }
-struct peo
+int a[1000005], n, m;
+void min_make()
 {
-    int b, e, g;
-};
-
+    deque<int> q;
+    for (int i = 0; i < n; i++)
+    {
+        while (!q.empty() && q.front() <= i - m)
+        {
+            q.pop_front();
+        }
+        while (!q.empty( ) && a[q.back()] >= a[i])
+        {
+            q.pop_back();
+        }
+        q.push_back(i);
+        if(i>=m-1)
+            cout << a[q.front()] << " ";
+    }
+    return;
+}
+void max_make()
+{
+    deque<int> q;
+    for (int i = 0; i < n; i++)
+    {
+        while (!q.empty() && q.front() <= i - m)
+        {
+            q.pop_front();
+        }
+        while (!q.empty( ) && a[q.back()] <= a[i])
+        {
+            q.pop_back();
+        }
+        q.push_back(i);
+        if(i>=m-1)
+            cout << a[q.front()] << " ";
+    }
+    return;
+}
 void solve()
 {
-    int n, m, sum=0;
     cin >> n >> m;
-    sum = n;
-    while (n >= m)
+    for (int i = 0; i < n; i++)
     {
-        sum += n / m;
-        n = (n / m) + (n % m);
+        cin >> a[i];
     }
-    cout << sum;
+    min_make();
+    cout << endl;
+    max_make();
+    return;
 }
 
-int main()
+signed main()
 {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
