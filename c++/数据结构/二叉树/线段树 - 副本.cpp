@@ -151,7 +151,7 @@ int main()
     cin.tie(nullptr);
     cout.tie(nullptr);
     #ifndef ONLINE_JUDGE 
-        freopen("test.in", "r", stdin);
+        //freopen("test.in", "r", stdin);
         //freopen("test.out", "w", stdout);
     #endif
     solve();

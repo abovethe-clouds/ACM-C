@@ -1,7 +1,7 @@
 {
   "options": {
     "env": {
-      "Path": "C:\\TDM-GCC-64\\bin;${env:Path}"
+      "Path": "D:\\Program Files (x86)\\Embarcadero\\Dev-Cpp\\TDM-GCC-64\\bin;${env:Path}"
     }
   },
   "tasks": [
@@ -11,9 +11,9 @@
         "${file}",
         "-o",
         "${fileDirname}\\${fileBasenameNoExtension}.exe",
-        "-std=c++20"
+        "-std=c++17"
       ],
-      "command": "C:\\TDM-GCC-64\\bin\\g++.exe",
+      "command": "D:\\Program Files (x86)\\Embarcadero\\Dev-Cpp\\TDM-GCC-64\\bin\\g++.exe",
       "group": {
         "isDefault": true,
         "kind": "build"
@@ -38,7 +38,7 @@
       "options": {
         "cwd": "${fileDirname}",
         "env": {
-          "Path": "C:\\TDM-GCC-64\\bin;${env:Path}"
+          "Path": "D:\\Program Files (x86)\\Embarcadero\\Dev-Cpp\\TDM-GCC-64\\bin;${env:Path}"
         }
       },
       "presentation": {
@@ -51,26 +51,6 @@
       },
       "problemMatcher": [],
       "type": "pause-console"
-    },
-    {
-      "type": "cppbuild",
-      "label": "C/C++: g++.exe 生成活动文件",
-      "command": "C:\\TDM-GCC-64\\bin\\g++.exe",
-      "args": [
-        "-fdiagnostics-color=always",
-        "-g",
-        "${file}",
-        "-o",
-        "${fileDirname}\\${fileBasenameNoExtension}.exe"
-      ],
-      "options": {
-        "cwd": "${fileDirname}"
-      },
-      "problemMatcher": [
-        "$gcc"
-      ],
-      "group": "build",
-      "detail": "编译器: C:\\TDM-GCC-64\\bin\\g++.exe"
     }
   ],
   "version": "2.0.0"
